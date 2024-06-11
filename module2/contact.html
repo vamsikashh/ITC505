@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Life Reflections</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Pacifico', cursive;">Life Reflections</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+            <form action="submit_contact.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section class="additional-contact-info">
+            <h3>Additional Contact Information</h3>
+            <p>Email: contact@lifereflections.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <p>Address: 123 Reflections Avenue, Cityville, Country</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:contact@lifereflections.com">contact@lifereflections.com</a></p>
+        <ul class="social-media">
+            <li><a href="https://twitter.com/lifereflections" target="_blank">Twitter</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

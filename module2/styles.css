@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #a54141;
+}
+
+header {
+    background-color: #07587a;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #07587a;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.image-gallery img {
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-posts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-post {
+    width: 30%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+    margin-top: 0;
+}
+
+#subscribe {
+    text-align: center;
+}
+
+#subscribe input[type="email"] {
+    padding: 10px;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+#subscribe button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Existing CSS styles */
+
+#featured-posts,
+#recent-updates,
+#call-to-action {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#featured-posts h2,
+#recent-updates h2,
+#call-to-action h2 {
+    color: #333;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.post h3 {
+    margin-top: 0;
+}
+
+.post p {
+    margin-bottom: 10px;
+}
+
+.post a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+#recent-updates ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#recent-updates li {
+    margin-bottom: 10px;
+}
+
+#recent-updates li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#recent-updates li a:hover {
+    text-decoration: underline;
+}
+
+#call-to-action form {
+    margin-top: 10px;
+}
+
+#call-to-action input[type="email"],
+#call-to-action button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#call-to-action input[type="email"] {
+    width: 200px;
+    margin-right: 10px;
+}
+
+#call-to-action button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#call-to-action button:hover {
+    background-color: #0056b3;
+}
+/* Existing CSS styles */
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* New font styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h2, h3 {
+    font-family: 'Pacifico', cursive;
+}
+
