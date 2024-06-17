@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - Custom Font Delivery</title>
+    <style>
+        @font-face {
+            font-family: 'ComicSansMS';
+            src: url('fonts/ComicSansMS-Regular.woff2') format('woff2'),
+                 url('fonts/ComicSansMS-Regular.woff') format('woff'),
+                 url('fonts/ComicSansMS-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'ComicSansMS', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lab 3 - Custom Font Delivery</h1>
+    </header>
+    <main>
+        <div class="section">
+            <h2>Delivering Fonts to Clients (Browsers)</h2>
+            <p>This section explains how to deliver a specific font to a client's browser using the <code>@font-face</code> rule in CSS. The chosen font for this demonstration is "Comic Sans MS".</p>
+        </div>
+
+        <div class="section">
+            <h2>Font Analysis: Comic Sans MS</h2>
+            <ul>
+                <li><strong>Style:</strong> Comic Sans MS is a casual script typeface known for its playful and informal appearance.</li>
+                <li><strong>Usage:</strong> Ideal for informal documents, children's materials, and contexts where a whimsical tone is desired.</li>
+                <li><strong>Design:</strong> Features exaggerated forms and irregular spacing to mimic comic book lettering.</li>
+                <li><strong>Readability:</strong> While legible, it may not be suitable for formal or professional contexts due to its casual nature.</li>
+                <li><strong>Compatibility:</strong> Supported by most modern web browsers, ensuring consistent display across different platforms.</li>
+                <li><strong>Performance:</strong> Considered a display font, it should be used sparingly to optimize performance, as decorative fonts can be larger in file size.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Using @font-face Rule in CSS</h2>
+            <p>To use the Comic Sans MS font on your website, follow these steps:</p>
+            <ol>
+                <li><strong>Choose a Font:</strong> Select the Comic Sans MS font file (e.g., ComicSansMS-Regular.ttf) from a reliable source.</li>
+                <li><strong>Download the Font:</strong> Save the font file to your local system.</li>
+                <li><strong>Upload the Font:</strong> Transfer the font file to your web server, placing it in a directory accessible to your website (e.g., <code>/fonts/</code>).</li>
+                <li><strong>Define @font-face:</strong> Use the <code>@font-face</code> rule in your CSS stylesheet to specify the font family and its location:</li>
+            </ol>
+            <pre><code>
+@font-face {
+    font-family: 'ComicSansMS';
+    src: url('fonts/ComicSansMS-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'ComicSansMS', sans-serif;
+}
+            </code></pre>
+            <p>By following these steps, the Comic Sans MS font will be applied to the client's browser when they visit your website, ensuring a consistent and enjoyable typography experience.</p>
+        </div>
+    </main>
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
