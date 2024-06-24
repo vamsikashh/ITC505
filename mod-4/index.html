@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Animation</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+
+  svg {
+    width: 200px;
+    height: 200px;
+  }
+
+  rect {
+    fill: #e0715e;
+    animation: move 2s infinite alternate;
+  }
+
+  circle {
+    fill: #3498db;
+    animation: float 3s infinite;
+  }
+
+  text {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 12px;
+    fill: rgb(0, 0, 0);
+    animation: textMove 2s infinite;
+  }
+
+  @keyframes move {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(30px);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes textMove {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="60" width="40" height="20" rx="5" ry="5" />
+  <circle cx="70" cy="20" r="10" />
+  <circle cx="40" cy="40" r="8" />
+  <circle cx="60" cy="80" r="6" />
+  <circle cx="30" cy="80" r="5" />
+  <circle cx="10" cy="40" r="7" />
+  <circle cx="90" cy="60" r="9" />
+  <circle cx="50" cy="20" r="6" />
+  <text x="30" y="75">Kashh</text>
+  <rect x="10" y="10" width="20" height="20" fill="#f39c12">
+    <animate attributeName="x" from="10" to="70" dur="4s" repeatCount="indefinite" />
+  </rect>
+  <circle cx="90" cy="90" r="8" fill="#27ae60">
+    <animate attributeName="r" values="8;15;8" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="5" fill="#8e44ad">
+    <animate attributeName="cy" values="50;70;50" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="50" y="50" fill="#e74c3c">
+    <animate attributeName="y" values="50;70;50" dur="2s" repeatCount="indefinite" />
+    Vamsi
+  </text>
+</svg>
+</body>
+</html>
