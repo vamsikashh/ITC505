@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
   }
 
   svg {
@@ -62,6 +63,14 @@
       transform: translateY(-30px);
     }
   }
+
+  #lastUpdated {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 10px;
+    color: #888;
+  }
 </style>
 </head>
 <body>
@@ -89,5 +98,14 @@
     Vamsi
   </text>
 </svg>
+<p id="lastUpdated"></p>
+<script>
+  // Get the current date and time
+  const now = new Date();
+  // Format the date and time as desired
+  const formattedDate = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+  // Update the lastUpdated element with the formatted date and time
+  document.getElementById('lastUpdated').innerText = `Last updated: ${formattedDate}`;
+</script>
 </body>
 </html>
