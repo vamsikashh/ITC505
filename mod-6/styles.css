@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header {
+    background-color: rgb(239, 136, 136);
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+}
+
+header h1 {
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px 0;
+}
+
+article {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+article h2 {
+    color: rgb(0, 0, 0);
+}
+
+article p {
+    color: rgb(0, 0, 0);
+}
+
+article a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+article a:hover {
+    background-color: rgb(255, 169, 169);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Existing CSS styles remain unchanged */
+
+article {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures content overflow is hidden when collapsed */
+}
+
+article.expanded {
+    height: auto; /* Allows the article to expand to show full content */
+}
+
+article p {
+    color: rgb(0, 0, 0);
+    display: none; /* Initially hide full content */
+}
+
+article.expanded p {
+    display: block; /* Display full content when article is expanded */
+}
+
+article a.read-more {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+article a.read-more:hover {
+    background-color: rgb(247, 164, 164);
+}
