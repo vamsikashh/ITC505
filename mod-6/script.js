@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = document.querySelectorAll('article');
 
     articles.forEach(article => {
-        const readMoreLink = article.querySelector('a');
+        const readMoreLink = article.querySelector('a.read-more');
 
         readMoreLink.addEventListener('click', function(e) {
             e.preventDefault();
@@ -19,4 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
 });
