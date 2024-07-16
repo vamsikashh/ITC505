@@ -78,3 +78,19 @@ footer {
     text-align: center;
     font-size: 0.9em;
 }
+/* Style for Addendum */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #666;
+}
