@@ -10,15 +10,16 @@
     <header>
         <h1>BMI, Protein, and Calorie Calculator</h1>
     </header>
-    <main>
-        <aside class="advertisement">
-            <a href="https://www.amazon.com/OPTIMUM-NUTRITION-STANDARD-Protein-Vanilla/dp/B000GISU1M" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81rkH4m7O3L._AC_UF1000,1000_QL80_.jpg" alt="Advertisement">
-                <div class="overlay">
-                    <span class="message">Click here for more!</span>
-                </div> 
-        </aside>
-        <div class="container">
+    <div class="container">
+        <nav class="sidebar-left">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main class="content">
             <div class="input-group">
                 <label for="age">Age:</label>
                 <input type="number" id="age" placeholder="Enter your age">
@@ -50,12 +51,21 @@
             </div>
             <button id="calculate">Calculate</button>
             <div id="result" class="result"></div>
-        </div>
-    </main>
+        </main>
+        <aside class="sidebar-right advertisement">
+            <a href="https://www.amazon.com/OPTIMUM-NUTRITION-STANDARD-Protein-Vanilla/dp/B000GISU1M" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81rkH4m7O3L._AC_UF1000,1000_QL80_.jpg" alt="Advertisement">
+                <div class="overlay">
+                    <span class="message">Click here for more!</span>
+                </div>
+            </a>
+        </aside>
+    </div>
     <footer>
         <p>Last updated: 
             <span id="lastModified"></span>
         </p>
+        <p>Addendum: This page calculates BMI, daily calorie intake, and protein requirements based on user inputs. It uses JavaScript to process the data and display the results. Challenges included handling empty inputs and ensuring calculations were accurate, which were solved by adding input validation and refining formulas.</p>
     </footer>
     <script type="text/javascript">
         var x = document.lastModified;
