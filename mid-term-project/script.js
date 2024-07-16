@@ -75,7 +75,7 @@ const story = {
     secret: {
         text: "You discovered a secret and are excited and enlightened.",
         choices: [],
-        image: "secret.pngt"
+        image: "secret.png"
     },
     trapped: {
         text: "You got trapped but were rescued later. You are scared but safe.",
