@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mad Lib Form</h1>
+        <form action="/ITC505/lab-7/index.html" method="POST">
+            <label for="noun">Noun:</label>
+            <input type="text" id="noun" name="noun" required><br>
+            <label for="verb">Verb:</label>
+            <input type="text" id="verb" name="verb" required><br>
+            <label for="adjective">Adjective:</label>
+            <input type="text" id="adjective" name="adjective" required><br>
+            <label for="adverb">Adverb:</label>
+            <input type="text" id="adverb" name="adverb" required><br>
+            <label for="pluralNoun">Plural Noun:</label>
+            <input type="text" id="pluralNoun" name="pluralNoun" required><br>
+            <button type="submit">Submit</button>
+        </form>
+        <section class="addendum">
+            <h2>Project Addendum</h2>
+            <p><strong>Overview:</strong> In this lab, I implemented a Mad Lib web form using ExpressJS. The form captures user inputs and generates a fun story based on those inputs. The project consists of an HTML form for input collection, a server-side script to handle form submissions, and a CSS file for styling the form.</p>
+            <p><strong>Steps Followed:</strong></p>
+            <ol>
+                <li><strong>Setup and Installation:</strong> Installed Node.js and npm using Homebrew on macOS. Initialized a new Node.js project using <code>npm init -y</code>. Installed required npm packages: <code>express</code>, <code>morgan</code>, and <code>forever</code>.</li>
+                <li><strong>Project Structure:</strong> Created the project directory and set up the following structure:
+                    <pre>
+├── public/
+│   ├── index.html
+│   ├── style.css
+├── server.js
+├── package.json
+└── package-lock.json
+                    </pre>
+                </li>
+                <li><strong>Server Configuration:</strong> Created <code>server.js</code> with the following functionalities:
+                    <ul>
+                        <li>Configured ExpressJS to serve static files from the <code>public</code> directory.</li>
+                        <li>Implemented a POST route to handle form submissions and generate the Mad Lib story.</li>
+                    </ul>
+                </li>
+                <li><strong>HTML Form:</strong> Designed an HTML form (<code>index.html</code>) with five input fields (noun, verb, adjective, adverb, and plural noun) and a submit button. Added a footer to display the last modified date using JavaScript.</li>
+                <li><strong>CSS Styling:</strong> Created <code>style.css</code> to style the HTML form, making it visually appealing and user-friendly.</li>
+                <li><strong>Form Handling and Feedback:</strong> Implemented form handling in <code>server.js</code> to generate and display the Mad Lib story based on user inputs.</li>
+            </ol>
+        </section>
+        <footer>
+            <p>Last updated: 
+                <span id="lastModified"></span>
+            </p>
+        </footer>
+        <script type="text/javascript">
+            var x = document.lastModified;
+            document.getElementById('lastModified').textContent = x;
+        </script>
+    </div>
+</body>
+</html>
