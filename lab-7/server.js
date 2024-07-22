@@ -37,7 +37,7 @@ server.post('/ITC505/lab-7/index.html', (req, res) => {
 // The server uses port 80 by default unless you start it with the extra
 // command line argument 'local' like this:
 //       node server.js local
-let port = 80;
+let port = process.env.PORT || 80;
 if (process.argv[2] === 'local') {
   port = 8080;
 }
