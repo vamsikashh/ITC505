@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(5, 100px);
+            gap: 5px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .square.is-off {
+            background-color: black;
+        }
+
+        /* Addendum Section Styling */
+  
+
+  
+
+
+        /* Reset Button Styling */
+        #reset-btn, #addendum {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        #reset-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+      
+      ul {
+        list-style: none;
+        text-align: left;
+      }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lights Out Game</h1>
+    <div id="game-board"></div>
+    <button id="reset-btn">Reset Game</button>
+  <!-- Addendum Section -->
+    <button id="addendum">
+        Addendum
+        
+    </button>
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    
+    
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-addendum">
+                <!-- Addendum content will go here if needed -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boardSize = 5;
+            const board = document.getElementById('game-board');
+
+            // Create the board
+            const createBoard = () => {
+                for (let i = 0; i < boardSize; i++) {
+                    for (let j = 0; j < boardSize; j++) {
+                        const square = document.createElement('div');
+                        square.classList.add('square');
+                        square.dataset.row = i;
+                        square.dataset.col = j;
+                        square.addEventListener('click', handleSquareClick);
+                        board.appendChild(square);
+                    }
+                }
+            };
+
+            // Toggle the square state
+            const toggleSquare = (square) => {
+                square.classList.toggle('is-off');
+            };
+
+            // Toggle the state of the clicked square and its neighbors
+            const handleSquareClick = (event) => {
+                const square = event.target;
+                const row = parseInt(square.dataset.row);
+                const col = parseInt(square.dataset.col);
+
+                toggleSquare(square);
+                if (row > 0) toggleSquare(document.querySelector(`.square[data-row="${row - 1}"][data-col="${col}"]`));
+                if (row < boardSize - 1) toggleSquare(document.querySelector(`.square[data-row="${row + 1}"][data-col="${col}"]`));
+                if (col > 0) toggleSquare(document.querySelector(`.square[data-row="${row}"][data-col="${col - 1}"]`));
+                if (col < boardSize - 1) toggleSquare(document.querySelector(`.square[data-row="${row}"][data-col="${col + 1}"]`));
+
+                checkWin();
+            };
+
+            // Check if all squares are white (game is won)
+            const checkWin = () => {
+                const allSquares = document.querySelectorAll('.square');
+                const allWhite = Array.from(allSquares).every(square => !square.classList.contains('is-off'));
+                if (allWhite) {
+                    setTimeout(() => alert('You win!'), 10);
+                }
+            };
+
+            // Randomize the board with a solveable configuration
+            const randomizeBoard = () => {
+                const numberOfMoves = Math.floor(Math.random() * 10) + 5;
+                for (let i = 0; i < numberOfMoves; i++) {
+                    const randomRow = Math.floor(Math.random() * boardSize);
+                    const randomCol = Math.floor(Math.random() * boardSize);
+                    const square = document.querySelector(`.square[data-row="${randomRow}"][data-col="${randomCol}"]`);
+                    handleSquareClick({ target: square });
+                }
+            };
+
+            // Reset the game
+            const resetGame = () => {
+                // Remove all squares
+                board.innerHTML = '';
+                // Recreate the board and randomize it
+                createBoard();
+                randomizeBoard();
+            };
+
+            // Initial setup
+            createBoard();
+            randomizeBoard();
+
+            // Reset button functionality
+            document.getElementById('reset-btn').addEventListener('click', resetGame);
+
+            // Update the footer with the last modified date and time
+            const updateLastModified = () => {
+                const x = new Date(document.lastModified);
+                document.getElementById('lastModified').textContent = x.toLocaleString();
+            };
+
+            updateLastModified();
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Show the addendum in the modal (if needed)
+        document.getElementById('modal-addendum').innerHTML = `
+            <h2>Addendum</h2>
+            <p><strong>Process and Creative Choices:</strong></p>
+            <ul>
+                <li><strong>HTML Structure:</strong> Designed the layout for the game board and footer.</li>
+                <li><strong>CSS Styling:</strong> Applied styles to the game board and squares for a clean visual appearance.</li>
+                <li><strong>JavaScript Functionality:</strong> Implemented core game logic including board creation, square toggling, win condition checks, and board randomization.</li>
+                <li><strong>Randomization:</strong> Utilized a click simulation method to randomize the board configuration while ensuring solvability.</li>
+            </ul>
+            <p><strong>Challenges:</strong></p>
+            <ul>
+                <li><strong>Solvability:</strong> Ensuring the board is solvable by simulating user interactions rather than directly setting states.</li>
+                <li><strong>Boundary Conditions:</strong> Managing edge cases where clicks affect squares outside the grid boundaries.</li>
+            </ul>
+            <p><strong>Insights:</strong></p>
+            <ul>
+                <li><strong>Simulation Approach:</strong> Effective for generating a solvable initial board state while maintaining randomness.</li>
+                <li><strong>Modular Code:</strong> Enhances maintainability and readability by keeping functions focused and descriptive.</li>
+                <li><strong>User Interaction Simulation:</strong> Provides a reliable method for initializing game states compared to random direct assignments.</li>
+            </ul>
+        `;
+
+        // Open modal
+        document.getElementById('addendum').addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
