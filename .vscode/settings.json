@@ -1,8 +1,4 @@
 {
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}",
-        ".vscode{,/**}"
-    ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/5074e2e6-890e-4d80-9078-26a22daf529b/resourceGroups/vamsikashh_group/providers/Microsoft.Web/sites/vamsikashh",
-    "appService.deploySubpath": "lab-7"
+    "appService.defaultWebAppToDeploy": "/subscriptions/5074e2e6-890e-4d80-9078-26a22daf529b/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/modulediscussion",
+    "appService.deploySubpath": "mod-7"
 }

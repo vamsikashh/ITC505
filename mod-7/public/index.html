@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .completed {
+            color: green;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#todo">TODO List</a>
+        <a href="#status-code">Status Code Examples</a>
+        <a href="#json-example">JSON Example</a>
+    </nav>
+
+    <section id="todo">
+        <h1>TODO List</h1>
+        <ul id="taskList">
+            <li>Buy groceries</li>
+            <li>Read a book</li>
+            <li>Write a blog post</li>
+            <li>Exercise</li>
+        </ul>
+    </section>
+
+    <section id="status-code">
+        <h1>Status Code Examples</h1>
+        <p>Status Code: 200 OK</p>
+        <pre>
+{
+    "status": "success",
+    "message": "Everything is running smoothly."
+}
+        </pre>
+        <p>Status Code: 404 Not Found</p>
+        <pre>
+{
+    "status": "error",
+    "message": "Page Not Found"
+}
+        </pre>
+        <h2>Additional HTTP Status Codes</h2>
+        <ul>
+            <li><strong>201 Created</strong> - The request has been fulfilled and has resulted in the creation of a resource.</li>
+            <li><strong>400 Bad Request</strong> - The server could not understand the request due to invalid syntax.</li>
+            <li><strong>401 Unauthorized</strong> - The request requires user authentication.</li>
+            <li><strong>403 Forbidden</strong> - The server understood the request, but refuses to authorize it.</li>
+            <li><strong>500 Internal Server Error</strong> - The server encountered an unexpected condition that prevented it from fulfilling the request.</li>
+        </ul>
+    </section>
+
+    <section id="json-example">
+        <h1>JSON Example</h1>
+        <p><strong>Original JSON Object:</strong></p>
+        <pre id="json-original">
+[
+    {
+        "title": "Interstellar",
+        "director": "Christopher Nolan",
+        "year": 2014,
+        "genre": "Science Fiction",
+        "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"]
+    }
+]
+        </pre>
+        <p><strong>JSON Stringify and Parse Output:</strong></p>
+        <pre id="json-stringify">
+{
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "year": 2014,
+    "genre": "Science Fiction",
+    "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"]
+}
+        </pre>
+    </section>
+
+    <script>
+        document.getElementById('taskList').addEventListener('click', function (event) {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('completed');
+            }
+        });
+
+        const jsonData = `[
+            {
+                "title": "Inception",
+                "director": "Christopher Nolan",
+                "year": 2010,
+                "genre": "Science Fiction",
+                "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"]
+            },
+            {
+                "title": "The Matrix",
+                "director": "The Wachowskis",
+                "year": 1999,
+                "genre": "Action",
+                "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"]
+            },
+            {
+                "title": "Interstellar",
+                "director": "Christopher Nolan",
+                "year": 2014,
+                "genre": "Science Fiction",
+                "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"]
+            }
+        ]`;
+
+        const jsonObject = JSON.parse(jsonData);
+        document.getElementById('json-stringify').textContent = JSON.stringify(jsonObject[2], null, 4);
+    </script>
+</body>
+</html>
